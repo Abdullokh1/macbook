@@ -12,4 +12,103 @@ body {
   display: flex;
   flex-direction: column;
 }
+button{
+  border: none;
+  background-color: transparent;
+}
+.price__macbook__img{
+  object-fit: cover;
+}
+.bx-fullscreen{
+  font-size: 30px;
+}
+.price__mac__btn{
+  padding: 5px;
 
+}
+.price__mac__btn:hover{
+  outline: 2px solid #000;
+  border-radius: 10px;
+}
+.active{
+  outline: 2px solid #000;
+  border-radius: 10px;
+}
+#price{
+  padding-top: 110px;
+}
+.price__title{
+  font-size: 48px;
+  width: 500px;
+}
+.bx-right-arrow{
+  font-size: 30px;
+  color: #06c;
+}
+.price__sub__title{
+  font-size: 17px;
+  font-weight: 600;
+}
+.price__memory__btn{
+  border: 1px solid #888;
+  padding: 14px 10px;
+  width: 180px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 17px;
+}
+.price__capacity{
+  margin-bottom: 30px;
+}
+.golder-color{
+  width: 20px;
+  height: 20px;
+  background-color: #d29d00;
+  border-radius: 50%;
+  display: inline-block;
+}
+.gray-color{
+  background-color: #c0c0c0;
+}
+.gray-space-color{
+  background-color: #808080;
+}
+.color-btn{
+  width: 280px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #888;
+}
+.active-price{
+  border: 2px solid #06c;
+}
+.price__minus__btn{
+  padding: 6px 20px;
+  border: 1px solid rgba(204, 204, 204, 0.803);
+  border-radius: 5px 0 0 5px;
+}
+.price__plus__btn{
+  border-radius: 0 5px 5px 0;
+}
+.price__count{
+  padding: 10px 35px;
+  border: 1px solid rgba(204, 204, 204, 0.479);
+}
+.count-icon{
+  font-size: 25px;
+}
+.price__info{
+  font-size: 32px;
+}
+.add-card-btn{
+  background-color: #06c;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+  width: 577px;
+}
+.compare-btn{
+  background-color: #f5f5f7;
+  color: #06c;
+}
