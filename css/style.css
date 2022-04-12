@@ -16,6 +16,9 @@ button{
   border: none;
   background-color: transparent;
 }
+ul{
+  list-style: none;
+}
 .price__macbook__img{
   object-fit: cover;
 }
@@ -100,15 +103,52 @@ button{
 .price__info{
   font-size: 32px;
 }
+.price-del-info{
+  font-size: 20px;
+}
 .add-card-btn{
   background-color: #06c;
   padding: 10px 20px;
   border-radius: 8px;
   color: #fff;
   font-size: 18px;
-  width: 577px;
+  width: 85%;
 }
 .compare-btn{
   background-color: #f5f5f7;
   color: #06c;
+}
+.price__inner__part{
+  margin-right: 50px;
+}
+.price__second__wrap{
+  overflow: scroll;
+  height: 74vh;
+  position: relative;
+  top: -60px;
+}
+.price__second__wrap::-webkit-scrollbar{
+  width: 0px;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .price__main__wrapper{
+    flex-direction: column;
+    align-items: center;
+  }
+  .price__title__wrapper{
+    justify-content: center;
+    margin-top: 55px;
+  }
+  .price__inner__part{
+    margin: 0 0;
+  }
+  .price__mac__imgs{
+    width: 100%;
+  }
+  .price__capacity{
+    width: 100%;
+  }
 }
