@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>MacBro</title>
   <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -14,17 +14,17 @@
 
 <body>
 
-  <header>
+  <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">MacBro</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
@@ -54,95 +54,233 @@
   </header>
 
 
-  <section id="price">
-    <div class="container">
-      <div class="d-flex justify-content-between price__main__wrapper">
-        <div class="col-lg-5 col-xs-12 ms-5 price__inner__part">
+  <main>
 
-          <div class= 'main-img-wrapper'>
-
-          </div>
-
-          <div class="d-flex justify-content-end mb-4">
-            <button class="price__screen"><i class='bx  bx-fullscreen'></i></button> 
-          </div>
-
-
-          <ul class="d-flex price__mac__imgs p-0 m-0">
-
-          </ul>
-
-        </div>
-
-
-
-        <div class="col-lg-6 col-xs-12 price__second__wrap">
-          <div class="d-flex align-items-center mb-5 price__title__wrapper">
-            <div class="title-wrapper">
+    <section id="price">
+      <div class="container">
+        <div class="d-flex justify-content-between price__main__wrapper">
+          <div class="col-lg-5 col-xs-12  price__inner__part">
+  
+            <p class="press-exc">Press <span class="esc">Esc</span>  to exit full screen</p>
+  
+            <div class="box-wrapper">
+              <div class= 'main-img-wrapper'>
+    
+              </div>
+  
+            </div>
+  
+            <div class="d-flex justify-content-end mb-4">
+              <button class="price__screen"><i class='bx  bx-fullscreen'></i></button> 
+            </div>
+  
+            <ul class="d-flex price__mac__imgs p-0 m-0">
               
-            </div>
-            <i class='bx bx-exit'></i>
-          </div>
-          <h4 class="price__sub__title mb-3">Ram</h4>
-          <div class="btn-wrapper">
-            <ul class="d-flex price__capacity ram-capacity p-0">
-
-            </ul>
-            
-            <h4 class="price__sub__title mb-3">Memory capacity</h4>
-
-            <ul class="d-flex price__capacity flex-wrap memory-list p-0">
-
             </ul>
           </div>
-
-          <h4 class="price__sub__title mb-3">Colors</h4>
-          <div class="d-flex flex-wrap">
-
-            <button class="color-btn golden-btn me-3 active-price">
-              <span class="golder-color"></span><br>
-              Golden
-            </button>
-
-            <button class="color-btn gray-btn me-3">
-              <span class="golder-color gray-color"></span><br>
-              Silver
-            </button>
-            
-            <button class="color-btn grayspace-btn mt-3">
-              <span class="golder-color gray-space-color"></span><br>
-              Space Gray
-            </button>
-
-          </div>
-          <div class="d-flex mt-3">
-            <button class="price__minus__btn">
-              <i class='bx count-icon bx-minus'></i>
-            </button>
-
-            <input class="price__count" type="number" value="1">
-
-            <button class="price__minus__btn price__plus__btn">
-              <i class='bx count-icon bx-plus'></i>
-            </button>
-          </div>
-
-            <div class="total-price-wrapper">
-
+  
+          <div class="col-lg-6 col-xs-12 price__second__wrap">
+            <div class="d-flex align-items-center mb-5 price__title__wrapper">
+              <div class="title-wrapper">
+                
+              </div>
+              <i class='bx bx-exit'></i>
             </div>
-
-            <div class="old-price-wrapper">
-
+            <h4 class="price__sub__title mb-3">Ram</h4>
+            <div class="btn-wrapper">
+              <ul class="d-flex price__capacity ram-capacity p-0">
+  
+              </ul>
+              
+              <h4 class="price__sub__title mb-3">Memory capacity</h4>
+  
+              <ul class="d-flex price__capacity flex-wrap memory-list p-0">
+  
+              </ul>
             </div>
-
-          <div class="d-flex flex-column">
-            <button class="add-card-btn mb-2">Add to card</button>
-            <button class="add-card-btn compare-btn">Compare</button>
+  
+            <h4 class="price__sub__title mb-3">Colors</h4>
+            <div class="d-flex flex-wrap">
+  
+              <button class="color-btn golden-btn me-3 active-price">
+                <span class="golder-color"></span><br>
+                Golden
+              </button>
+  
+              <button class="color-btn gray-btn me-3">
+                <span class="golder-color gray-color"></span><br>
+                Silver
+              </button>
+              
+              <button class="color-btn grayspace-btn mt-3">
+                <span class="golder-color gray-space-color"></span><br>
+                Space Gray
+              </button>
+  
+            </div>
+            <div class="d-flex mt-3">
+              <button class="price__minus__btn">
+                <i class='bx count-icon bx-minus'></i>
+              </button>
+  
+              <input class="price__count" type="number" value="1">
+  
+              <button class="price__minus__btn price__plus__btn">
+                <i class='bx count-icon bx-plus'></i>
+              </button>
+            </div>
+  
+              <div class="total-price-wrapper">
+  
+              </div>
+  
+              <div class="old-price-wrapper">
+  
+              </div>
+  
+            <div class="d-flex flex-column">
+              <button class="add-card-btn mb-2">Add to card</button>
+              <button class="add-card-btn compare-btn">Compare</button>
+            </div>
           </div>
         </div>
       </div>
+    </section>
+  
+    <section id="product">
+      <div class="container">
+        <div class="product__small__container">
+          <div class="product__btn__wrapper d-flex">
+            <div class="act"></div>
+            <button class="col-6 product__btn product__btn--first">Review</button>
+            <button class="col-6 product__btn product__btn--second">Technic features</button>
+          </div>
+    
+          <div class="product__text__wrap">
+  
+          </div>
+        </div>
+  
+        <h4 class="text-center product__sub__title mt-5 mb-5">Similar products</h4>
+  
+        <div class="product__list__wrap">
+          <ul class="p-0 m-0 product__list  d-flex justify-content-center justify-content-between">
+    
+            <li class="product__item d-flex flex-column align-items-center col-4">
+               <img class="product__img" src="https://cdn.macbro.uz/macbro/ad319481-63dc-4bc2-bf4d-7a6c7aec02f5" alt="notebook" width="241" height="210">
+               <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+               <p>1400$</p>
+            </li>
+    
+            <li class="product__item d-flex flex-column align-items-center col-4">
+              <img class="product__img" src="https://cdn.macbro.uz/macbro/68a37b19-71f9-4342-addb-eae078edf11e" alt="notebook" width="241" height="210">
+              <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+           </li>
+    
+           <li class="product__item d-flex flex-column align-items-center col-4">
+            <img class="product__img" src="https://cdn.macbro.uz/macbro/98128be6-9be6-4691-a236-ea092158ed2a" alt="notebook" width="241" height="210">
+            <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+           </li>
+  
+           <li class="product__item d-flex flex-column align-items-center col-4">
+            <img class="product__img" src="https://cdn.macbro.uz/macbro/6d8aecc6-0e5e-40b5-b33d-3d9774f4208d" alt="notebook" width="241" height="210">
+            <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+           </li>
+  
+           <li class="product__item d-flex flex-column align-items-center col-4">
+            <img class="product__img" src="https://cdn.macbro.uz/macbro/c9ad4d28-1980-4eaf-8b38-8007adcdf12e" alt="notebook" width="241" height="210">
+            <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+           </li>
+  
+           <li class="product__item d-flex flex-column align-items-center col-4">
+            <img class="product__img" src="https://cdn.macbro.uz/macbro/955623b2-fcab-4ff4-9b70-459ef3c8e905" alt="notebook" width="241" height="210">
+            <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+           </li>
+  
+           <li class="product__item d-flex flex-column align-items-center col-4">
+            <img class="product__img" src="https://cdn.macbro.uz/macbro/46c341eb-d0ca-448a-a547-f6f45d6ba95a" alt="notebook" width="241" height="210">
+            <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+           </li>
+  
+           <li class="product__item d-flex flex-column align-items-center col-4">
+            <img class="product__img" src="https://cdn.macbro.uz/macbro/0dafb741-6d31-43d6-b824-0b1ba4422271" alt="notebook" width="241" height="210">
+            <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+           </li>
+  
+           <li class="product__item d-flex flex-column align-items-center col-4">
+            <img class="product__img" src="https://cdn.macbro.uz/macbro/b9c18548-4286-4fd8-91ce-d89903f46e64" alt="notebook" width="241" height="210">
+            <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+           </li>
+  
+           <li class="product__item d-flex flex-column align-items-center col-4">
+            <img class="product__img" src="https://cdn.macbro.uz/macbro/df7ae0bb-ff0d-40b0-8fe8-d52c4a38d884" alt="notebook" width="241" height="210">
+            <a class="product__name mt-5">MacBook Pro 13" (with M1)</a>
+           </li>
+  
+         </ul>
+  
+         <div class="left-button">
+           <button class="arrow-btn" id="leftArrow"><i class='bx left-right-btn bx-chevron-left'></i></button>
+         </div>
+  
+         <div class="right-button">
+          <button class="arrow-btn" id="rightArrow"><i class='bx left-right-btn bx-chevron-right'></i></button>
+        </div>
+  
+        </div>
+  
+        </div>
+  
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="containerr">
+
+      <ul class="m-0 p-0 d-flex justify-content-between">
+
+        <li class="d-flex flex-column">
+          <h5 class="footer-title">Buy now</h5>
+          <a class="footer-link" href="#">Mac</a>
+          <a class="footer-link" href="#">iPad</a>
+          <a class="footer-link" href="#">iPhone</a>
+        </li>
+
+        <li class="d-flex flex-column">
+          <h5 class="footer-title">Company</h5>
+          <a class="footer-link" href="#">News</a>
+          <a class="footer-link" href="#">About company</a>
+          <a class="footer-link" href="#">Address</a>
+          <a class="footer-link" href="#">For Business</a>
+
+        </li>
+
+        <li class="d-flex flex-column">
+          <h5 class="footer-title">Information</h5>
+          <a class="footer-link" href="#">Payment</a>
+          <a class="footer-link" href="#">Delivery</a>
+          <a class="footer-link" href="#">Contact</a>
+        </li>
+
+        <li class="d-flex flex-column col-3">
+          <h5 class="footer-title">Contact with us</h5>
+          <div class="d-flex">
+            <a class="me-2" href="#"><i class='bx footer-icon bxl-facebook-square'></i></a>
+            <a class="me-2" href="#"><i class='bx footer-icon bxl-instagram'></i></a>
+            <a class="me-2" href="#"><i class='bx footer-icon bxl-telegram'></i></a>
+            <a class="me-2" href="#"><i class='bx footer-icon bxl-youtube'></i></a>
+            <a class="me-2" href="#"><i class='bx footer-icon bxl-tiktok'></i></a>
+          </div>
+          <a class="text-dark" href="tel:999">+998 93 688 64 61</a>
+        </li>
+      </ul>
     </div>
-  </section>
+  </footer>
+
+
+
+
 
 
 

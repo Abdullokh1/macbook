@@ -7,12 +7,12 @@ const obj = [
     med: [
       {
         memory: 256,
-        price: '1200$',
+        price: 1200,
         oldPrice: '1400$',
       },
       {
         memory: 512,
-        price: '1300$',
+        price: 1300,
         oldPrice: '1500$',
       },
     ],
@@ -28,13 +28,13 @@ const obj = [
       "https://cdn.macbro.uz/macbro/4a2be20b-558e-4dda-852e-413b23b153e3",
     ],
     silver: [
-      "https://cdn.macbro.uz/macbro/e622b5e0-65fc-4e91-a70d-9025fc30fd58",
-
       "https://cdn.macbro.uz/macbro/cf510327-b4e8-4378-a001-cbd8779504b8",
-
+      
       "https://cdn.macbro.uz/macbro/67762a5d-aa1e-4d3c-b3cd-fda8b50b937f",
 
       "https://cdn.macbro.uz/macbro/51b73a16-4170-4944-80cf-6f8bca51351e",
+
+      "https://cdn.macbro.uz/macbro/e622b5e0-65fc-4e91-a70d-9025fc30fd58",
 
       "https://cdn.macbro.uz/macbro/d90e01d1-2087-48a3-9462-912f58ea138c",
     ],
@@ -58,17 +58,17 @@ const obj = [
     med: [
       {
         memory: 256,
-        price: '1200$',
+        price: 1200,
         oldPrice: '1400$',
       },
       {
         memory: 512,
-        price: '1300$',
+        price: 1300,
         oldPrice: '1500$',
       },
       {
         memory: 1,
-        price: '1500$',
+        price: 1500,
         oldPrice: '1700$',
 
       },

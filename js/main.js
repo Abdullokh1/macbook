@@ -23,7 +23,6 @@ obj.forEach((item) => {
   ramWrapper.appendChild(li);
 })
 
-
 // MEMORY ITEM ADDED 
 
 obj[0].med.forEach((item) => {
@@ -35,7 +34,6 @@ obj[0].med.forEach((item) => {
   memoryList.appendChild(li);
 })
 
-
 // FIRST ACTIVE ADDED 
 
 const PriceBtn = document.querySelectorAll('.ram__btn');
@@ -43,7 +41,6 @@ const memoryBtn = document.querySelectorAll('.memory__button');
 
 PriceBtn[0].classList.add('active-price');
 memoryBtn[0].classList.add('active-price');
-
 
 // 1TB ADDED
 
@@ -93,11 +90,10 @@ PriceBtn[1].addEventListener('click', () => {
 
   addedBtn.addEventListener('click', ()=>{
      memory.innerText = obj[1].med[2].memory+'tb';
-     totalinfo.innerHTML = `${obj[1].med[2].price}`
+     totalinfo.textContent = obj[1].med[2].price+'$';
      oldpriceinfo.innerHTML = `${obj[1].med[2].oldPrice}`;
   })
 })
-
 
 // TITLE INFO  
 
@@ -126,12 +122,12 @@ memoryBtn[1].addEventListener('click', ()=>{
   MemoryTitle.innerText = obj[0].med[1].memory;
 })
 
-
 // COLORS TITLE CHANGED
 
 let gray = document.querySelector('.gray-btn');
 let golden = document.querySelector('.golden-btn');
 let grayspace = document.querySelector('.grayspace-btn');
+
 
 gray.addEventListener('click', ()=>{
   colorTitle.textContent = 'Silver';
@@ -145,75 +141,92 @@ grayspace.addEventListener('click', ()=>{
   colorTitle.textContent = 'Space Gray';
 })
 
-
 // TOTAL PRICE  
-
 
 const totalWrapper = document.querySelector('.total-price-wrapper');
 const oldPrice = document.querySelector('.old-price-wrapper');
 
-
 oldpriceinfo.className = 'price__info price-del-info mb-3 d-inline-block';
-oldpriceinfo.innerHTML = `${obj[0].med[0].oldPrice}`;
+oldpriceinfo.textContent = obj[0].med[0].oldPrice;
 oldPrice.appendChild(oldpriceinfo);
 
-
 totalinfo.className = 'price__info mt-3';
-totalinfo.innerHTML = `${obj[0].med[0].price}`;
+totalinfo.textContent = obj[0].med[0].price+'$';
 totalWrapper.appendChild(totalinfo);
 
 obj.forEach(item =>{
 
   PriceBtn[1].addEventListener('click', ()=>{
-    totalinfo.innerHTML = `${item.med[1].price}`
-    oldpriceinfo.innerHTML = `${item.med[1].oldPrice}`;
+    totalinfo.textContent = item.med[1].price+'$';
+    oldpriceinfo.textContent = item.med[1].oldPrice;
   })
 
   PriceBtn[0].addEventListener('click', ()=>{
-    totalinfo.innerHTML = `${item.med[0].price}`
-    oldpriceinfo.innerHTML = `${item.med[0].oldPrice}`;
+    totalinfo.textContent = item.med[0].price+'$';
+    oldpriceinfo.textContent = item.med[0].oldPrice;
   })
 
   memoryBtn[1].addEventListener('click', ()=>{
-    totalinfo.innerHTML = `${item.med[1].price}`
-    oldpriceinfo.innerHTML = `${item.med[1].oldPrice}`;
+    totalinfo.textContent = item.med[1].price+'$';
+    oldpriceinfo.textContent = item.med[1].oldPrice;
   })
 
   memoryBtn[0].addEventListener('click', ()=>{
-    totalinfo.innerHTML = `${item.med[0].price}`
-    oldpriceinfo.innerHTML = `${item.med[0].oldPrice}`;
+    totalinfo.textContent = item.med[0].price+'$';
+    oldpriceinfo.textContent = item.med[0].oldPrice;
   })
 
 })
-
-
 
 // PLUS MINUS COUNT 
 
 const plusBtn = document.querySelector('.price__plus__btn');
 const inputcount = document.querySelector('.price__count');
+const minusBtn = document.querySelector('.price__minus__btn');
+let c = 1;
 
-plusBtn.addEventListener("click", () => {
-  let elValue = Number(inputcount.value);
-  inputcount.value = elValue += 1;;
-});
+  plusBtn.addEventListener("click", () => {
+    let elValue = Number(inputcount.value);
+    inputcount.value = elValue += 1;
+    totalinfo.textContent = obj[0].med[0].price * c+'$';
+    oldpriceinfo.textContent = obj[0].med[0].oldPrice;
+    c++;
+  });
 
-
+  minusBtn.addEventListener('click', ()=>{
+    
+    let elValue = Number(inputcount.value);
+    if(elValue > 1){
+      inputcount.value = elValue -= 1;
+      totalinfo.textContent = obj[0].med[0].price * c+'$';
+      oldpriceinfo.textContent = obj[0].med[0].oldPrice;
+      c--;  
+    }
+  })
 
 // MAIN IMG 
 
-
 const mainImgWrap = document.querySelector('.main-img-wrapper');
 const smallImgs = document.querySelector('.price__mac__imgs');
+let imgButtons = document.querySelectorAll('.img-items'); 
 
-mainImgWrap.innerHTML = `
-<img class="price__macbook__img" src="${obj[0].gold[0]}" alt="max-golden" width="450" height="300">
-`;
+// DEFAULT IMGS 
+
+obj[0].gold.forEach(item =>{
+  let div = document.createElement('div');
+  div.innerHTML = `
+  <img class="price__macbook__img price-big-img" src="${item}" alt="max-golden" width="450" height="300">
+  `;
+  mainImgWrap.appendChild(div);
+  mainImgWrap.style.display = 'flex';
+  mainImgWrap.style.transition = 'all 0.4s ease';
+})
+
 
 obj[0].gold.forEach(item =>{
   
   let li = document.createElement('li');
-  li.className = 'img-items me-3';
+  li.className = 'img-items me-1';
   li.innerHTML = `
   <button class="price__mac__btn">
     <img class="price__macbook__img" src="${item}" alt="max-golden" width="88" height="88">
@@ -222,37 +235,192 @@ obj[0].gold.forEach(item =>{
   smallImgs.appendChild(li);
 })
 
-const macBtns = document.querySelectorAll('.img-items');
-macBtns[0].classList.add('active');
+// ADDING small and big  color imgs 
 
-obj[0].silver.forEach(item =>{
-  gray.addEventListener('click', ()=>{
-    mainImgWrap.innerHTML = `
-    <img class="price__macbook__img" src="${obj[0].silver[1]}" alt="max-golden" width="450" height="300">
+
+golden.addEventListener('click', ()=>{
+  smallImgs.innerHTML = '';
+  mainImgWrap.innerHTML = '';
+
+  obj[0].gold.forEach(item =>{
+    let li = document.createElement('li');
+    li.className = 'img-items me-1';
+    li.innerHTML = `
+    <button class="price__mac__btn">
+      <img class="price__macbook__img" src="${item}" alt="max-golden" width="88" height="88">
+    </button>
     `;
+    smallImgs.appendChild(li);
   })
-  golden.addEventListener('click', ()=>{
-    mainImgWrap.innerHTML = `
-    <img class="price__macbook__img" src="${obj[0].gold[0]}" alt="max-golden" width="450" height="300">
+  
+
+  obj[0].gold.forEach(item =>{
+    let div = document.createElement('div');
+    div.innerHTML = `
+    <img class="price__macbook__img price-big-img" src="${item}" alt="max-golden" width="450" height="300">
     `;
+    mainImgWrap.appendChild(div);
+    mainImgWrap.style.display = 'flex';
+    mainImgWrap.style.transition = 'all 0.4s ease';
   })
-  grayspace.addEventListener('click', ()=>{
-    mainImgWrap.innerHTML = `
-    <img class="price__macbook__img" src="${obj[0].SpaceGray[0]}" alt="max-golden" width="450" height="300">
+
+  const imgItems = document.querySelectorAll('.img-items');
+
+  imgItems.forEach(item => {
+    item.addEventListener('click', () => {
+      imgItems.forEach(element => {
+        element.classList.remove('active');
+      })
+      item.classList.add('active');
+    })
+  })
+
+  imgItems.forEach((item,index) =>{
+    item.addEventListener('click', ()=>{
+      slider(index);
+    })
+  });
+
+    const bigImg = document.querySelectorAll('.price-big-img');
+  bigImg.forEach(item =>{
+    item.style.height = '430px';
+  })
+
+})
+
+gray.addEventListener('click', ()=>{
+  smallImgs.innerHTML = '';
+  mainImgWrap.innerHTML = '';
+
+  obj[0].silver.forEach(item =>{
+    let li = document.createElement('li');
+    li.className = 'img-items me-1';
+    li.innerHTML = `
+    <button class="price__mac__btn">
+      <img class="price__macbook__img" src="${item}" alt="max-golden" width="88" height="88">
+    </button>
     `;
+    smallImgs.appendChild(li);
+
+    
+
+  })
+ 
+
+  obj[0].silver.forEach(item =>{
+    let div = document.createElement('div');
+    div.innerHTML = `
+    <img class="price__macbook__img price-big-img" src="${item}" alt="max-golden" width="450" height="300">
+    `;
+    mainImgWrap.appendChild(div);
+    mainImgWrap.style.display = 'flex';
+    mainImgWrap.style.transition = 'all 0.4s ease';
+
+
+  })
+
+  const imgItems = document.querySelectorAll('.img-items');
+
+  imgItems.forEach(item => {
+    item.addEventListener('click', () => {
+      imgItems.forEach(element => {
+        element.classList.remove('active');
+      })
+      item.classList.add('active');
+    })
+  })
+  
+  imgItems.forEach((item,index) =>{
+    item.addEventListener('click', ()=>{
+      slider(index);
+    })
+  })
+
+    const bigImg = document.querySelectorAll('.price-big-img');
+  bigImg.forEach(item =>{
+    item.style.height = '430px';
   })
 })
 
+grayspace.addEventListener('click', ()=>{
+  smallImgs.innerHTML = '';
+  mainImgWrap.innerHTML = '';
 
+  obj[0].SpaceGray.forEach(item =>{
+    let li = document.createElement('li');
+    li.className = 'img-items me-1';
+    li.innerHTML = `
+    <button class="price__mac__btn">
+      <img class="price__macbook__img" src="${item}" alt="max-golden" width="88" height="88">
+    </button>
+    `;
+    smallImgs.appendChild(li);
+  })
 
+  obj[0].SpaceGray.forEach(item =>{
+    let div = document.createElement('div');
+    div.innerHTML = `
+    <img class="price__macbook__img price-big-img" src="${item}" alt="max-golden" width="450" height="300">
+    `;
+    mainImgWrap.appendChild(div);
+    mainImgWrap.style.display = 'flex';
+    mainImgWrap.style.transition = 'all 0.4s ease';
+  })
 
+    const bigImg = document.querySelectorAll('.price-big-img');
+  bigImg.forEach(item =>{
+    item.style.height = '430px';
+  })
+  const imgItems = document.querySelectorAll('.img-items');
 
+  imgItems.forEach(item => {
+    item.addEventListener('click', () => {
+      imgItems.forEach(element => {
+        element.classList.remove('active');
+      })
+      item.classList.add('active');
+    })
+  })
+
+  imgItems.forEach((item,index) =>{
+    item.addEventListener('click', ()=>{
+      slider(index);
+    })
+  })
+
+  obj[0].SpaceGray.forEach(item =>{
+    let div = document.createElement('div');
+    div.innerHTML = `
+    <img class="price__macbook__img price-big-img" src="${item}" alt="max-golden" width="450" height="300">
+    `;
+    mainImgWrap.appendChild(div);
+    mainImgWrap.style.display = 'flex';
+    mainImgWrap.style.transition = 'all 0.4s ease';
+  })
+})
+
+const bigImg = document.querySelectorAll('.price-big-img');
+bigImg.forEach(item =>{
+  item.style.height = '430px';
+})
+// SLIDER 
+
+const imgItems = document.querySelectorAll('.img-items');
+imgItems.forEach((item,index) =>{
+    item.addEventListener('click', ()=>{
+      slider(index);
+    })
+  })
+  
+function slider(index){
+  mainImgWrap.style.transform = `translateX(${-index * 520}px)`;
+}
 
 // ACTIVE TABS 
 
-macBtns.forEach(item => {
+imgItems.forEach(item => {
   item.addEventListener('click', () => {
-    macBtns.forEach(element => {
+    imgItems.forEach(element => {
       element.classList.remove('active');
     })
     item.classList.add('active');
@@ -268,7 +436,6 @@ PriceBtn.forEach(item => {
   })
 })
 
-
 memoryBtn.forEach(item => {
   item.addEventListener('click', () => {
     memoryBtn.forEach(element => {
@@ -278,7 +445,6 @@ memoryBtn.forEach(item => {
   })
 })
 
-
 colorBtn.forEach(item => {
   item.addEventListener('click', () => {
     colorBtn.forEach(element => {
@@ -287,3 +453,142 @@ colorBtn.forEach(item => {
     item.classList.add('active-price');
   })
 })
+
+
+// MODAL PART 
+
+const fullscreen = document.querySelector('.price__screen');
+const secondPart = document.querySelector('.price__second__wrap');
+const innerPart = document.querySelector('.price__inner__part');
+const press = document.querySelector('.press-exc');
+const header = document.querySelector('.site-header');
+const product = document.getElementById('product');
+const footer = document.querySelector('.site-footer');
+let countItem = 0;
+
+fullscreen.addEventListener('click', ()=>{
+  header.style.display = 'none';
+  secondPart.style.display = 'none';
+  innerPart.style.left = '50%';
+  innerPart.style.transform = 'translate(-50%)';
+  innerPart.style.top = '20px';
+  product.style.display = 'none';
+  footer.style.display = 'none';
+  press.style.display = 'block';
+  fullscreen.style.position = 'absolute';
+  fullscreen.style.right = '-480px';
+  fullscreen.innerHTML = `<i class='bx bx-exit-fullscreen'></i>`;
+  countItem++;
+
+  if (countItem % 2 == 0){
+    header.style.display = 'block';
+    secondPart.style.display = 'block';
+    innerPart.style.left = '80px';
+    innerPart.style.transform = 'translate(0)';
+    press.style.display = 'none';
+    fullscreen.style.position = 'static';
+    fullscreen.innerHTML = `<i class='bx bx-fullscreen'></i>`;
+    innerPart.style.top = '-55px';
+    product.style.display = 'block';
+    footer.style.display = 'block';
+
+  }
+})
+
+
+
+const productBtn = document.querySelectorAll('.product__btn');
+const secondBtn = document.querySelector('.product__btn--second');
+const firstBtn = document.querySelector('.product__btn--first');
+const productText = document.querySelector('.product__text__wrap');
+const active = document.querySelector('.act');
+
+productText.innerHTML = `
+Eng ingichka va yengil Apple noutbuki endi M1 chipi tufayli yanada kuchliroq ishlaydi. 8 yadroli protsessor sizning vazifalaringizni katta tezlik blan amalga oshiradi. 8 yadroli GPU-ning to'liq quvvatidan foydalanib, grafikani talab qiladigan dasturlar va o'yinlarning keyingi darajasiga chiqing. Mashinani o'rganish uchun 16 yadroli Neural Engine yordamida operatsiyalarini tezlashtiradi va 18 soatgacha zaryad olmasdan ishlaydi. MacBook Air hali ham ixcham, lekin hozir u ancha kuchliroq.
+`;
+productText.style.fontSize = '17px';
+  productText.style.marginTop = '40px';
+
+secondBtn.addEventListener('click', ()=>{
+  active.style.transform = 'translate(98%)';
+  active.style.transition = 'transform 0.3s ease';
+  productText.innerHTML = `
+  Ekran: 13,3 "(2560x1600)<br>
+
+  Matritsa: IPS<br>
+
+  Protsessor: Apple M1 (8x3200 MGts)<br>
+
+  Video karta: Apple grafikasi 8 yadroli, Apple grafikasi 7 yadroli<br>
+
+  Ulagichlar: Mikrofon / naushniklar kombinatsiyasi, Thunderbolt / USB 4 x 2<br>
+
+  USB Type-C funktsiyasi: Quvvatni etkazib berish, Thunderbolt 3, Thunderbolt 4<br>
+
+  Simsiz interfeyslar: Wi-Fi 802.11ax, Bluetooth 5.0<br>
+
+  Batareya quvvati: 49,9 Wh<br>
+
+  Ish vaqti: 18 soat<br>
+
+  Operatsion tizim: macOS<br>
+
+  Hajmi: 304.1x212.4x16.1 mm<br>
+
+  Og'irligi: 1,29 kg<br>
+  `;
+  productText.style.fontSize = '17px';
+  productText.style.marginTop = '40px';
+})
+firstBtn.addEventListener('click', ()=>{
+  active.style.transform = 'translate(0)';
+  productText.innerHTML = `
+  Eng ingichka va yengil Apple noutbuki endi M1 chipi tufayli yanada kuchliroq ishlaydi. 8 yadroli protsessor sizning vazifalaringizni katta tezlik blan amalga oshiradi. 8 yadroli GPU-ning to'liq quvvatidan foydalanib, grafikani talab qiladigan dasturlar va o'yinlarning keyingi darajasiga chiqing. Mashinani o'rganish uchun 16 yadroli Neural Engine yordamida operatsiyalarini tezlashtiradi va 18 soatgacha zaryad olmasdan ishlaydi. MacBook Air hali ham ixcham, lekin hozir u ancha kuchliroq.
+  `;
+})
+
+
+
+// SLIDER PART 
+
+const leftArrow = document.getElementById('leftArrow');
+const rightArrow = document.getElementById('rightArrow');
+const List = document.querySelector('.product__list');
+leftArrow.style.display = 'none';
+let count1 = 0;
+
+rightArrow.addEventListener('click', ()=>{
+  count1++;
+
+  move();
+})
+
+leftArrow.addEventListener('click', ()=>{
+  count1--;
+
+  move();
+})
+
+function move(){
+   List.style.transform = `translate(${-count1*33}%)`;
+   List.style.transition = 'transform 0.4s ease';
+   
+   if (count1 >= 1){
+     leftArrow.style.display = 'block';
+   }
+   else{
+     leftArrow.style.display = 'none';
+   }
+
+   if (count1 == 7){
+     rightArrow.style.display = 'none';
+   }
+   else{
+    rightArrow.style.display = 'block';
+
+   }
+   
+}
+
+
+ 
