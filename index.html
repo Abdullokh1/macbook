@@ -58,73 +58,60 @@
     <div class="container">
       <div class="d-flex justify-content-between price__main__wrapper">
         <div class="col-lg-5 col-xs-12 ms-5 price__inner__part">
-            <img class="price__macbook__img" src="img/mac-golden-1.webp" alt="max-golden" width="450" height="300">
+
+          <div class= 'main-img-wrapper'>
+
+          </div>
+
           <div class="d-flex justify-content-end mb-4">
             <button class="price__screen"><i class='bx  bx-fullscreen'></i></button> 
           </div>
 
 
-          <div class="d-flex price__mac__imgs">
+          <ul class="d-flex price__mac__imgs p-0 m-0">
 
-            <button class="me-3 price__mac__btn active">
-              <img class="price__macbook__img" src="img/mac-golden-1.webp" alt="max-golden" width="88" height="88">
-            </button>
+          </ul>
 
-            <button class="me-3 price__mac__btn">
-              <img class="price__macbook__img" src="img/mac-golden-2.webp" alt="max-golden" width="88" height="88">
-            </button>
-
-            <button class="me-3 price__mac__btn">
-              <img class="price__macbook__img" src="img/mac-golden-3.webp" alt="max-golden" width="88" height="88">
-            </button>
-
-            <button class="me-3 price__mac__btn">
-              <img class="price__macbook__img" src="img/mac-golden-4.webp" alt="max-golden" width="88" height="88">
-            </button>
-
-            <button class="price__mac__btn">
-              <img class="price__macbook__img" src="img/mac-golden-5.webp" alt="max-golden" width="88" height="88">
-            </button>
-
-          </div>
         </div>
 
 
 
         <div class="col-lg-6 col-xs-12 price__second__wrap">
           <div class="d-flex align-items-center mb-5 price__title__wrapper">
-            <h1 class="price__title">MacBook Air 13-inch M1/8/256 Gold</h1>
-            <i class='bx bx-right-arrow'></i>
+            <div class="title-wrapper">
+              
+            </div>
+            <i class='bx bx-exit'></i>
           </div>
-          <h4 class="price__sub__title mb-2">Ram</h4>
-          <div class="d-flex price__capacity">
-            <button class="price__memory__btn price__gb__btn me-3 active-price" id="eightBtn">8GB</button>
-            <button class="price__memory__btn price__gb__btn" id="sixteenGb">16GB</button>
-          </div>
-          
-          <h4 class="price__sub__title mb-2">Memory capacity</h4>
-          <div class="d-flex price__capacity flex-wrap">
-            <button class="price__memory__btn price__memory__js me-3 active-price" id="memoryFirst">256GB</button>
-            <button class="price__memory__btn price__memory__js me-3" id="memorySecond">512GB</button>
-            <button class="price__memory__btn price__memory__js" id="oneTbBtn">1TB</button>
+          <h4 class="price__sub__title mb-3">Ram</h4>
+          <div class="btn-wrapper">
+            <ul class="d-flex price__capacity ram-capacity p-0">
+
+            </ul>
+            
+            <h4 class="price__sub__title mb-3">Memory capacity</h4>
+
+            <ul class="d-flex price__capacity flex-wrap memory-list p-0">
+
+            </ul>
           </div>
 
-          <h4 class="price__sub__title mb-2">Colors</h4>
+          <h4 class="price__sub__title mb-3">Colors</h4>
           <div class="d-flex flex-wrap">
 
-            <button class="color-btn me-3 active-price">
+            <button class="color-btn golden-btn me-3 active-price">
               <span class="golder-color"></span><br>
               Golden
             </button>
 
-            <button class="color-btn me-3">
+            <button class="color-btn gray-btn me-3">
               <span class="golder-color gray-color"></span><br>
-              Gray
+              Silver
             </button>
             
-            <button class="color-btn mt-3">
+            <button class="color-btn grayspace-btn mt-3">
               <span class="golder-color gray-space-color"></span><br>
-              Grayspace
+              Space Gray
             </button>
 
           </div>
@@ -133,19 +120,20 @@
               <i class='bx count-icon bx-minus'></i>
             </button>
 
-            <button class="price__count">
-              1
-            </button>
+            <input class="price__count" type="number" value="1">
 
             <button class="price__minus__btn price__plus__btn">
               <i class='bx count-icon bx-plus'></i>
             </button>
           </div>
 
-          <div>
-            <h4 class="price__info mt-3" id="totalSum">1200$</h4>
-            <del class="price__info price-del-info mb-3 d-inline-block">1400$</del>
-          </div>
+            <div class="total-price-wrapper">
+
+            </div>
+
+            <div class="old-price-wrapper">
+
+            </div>
 
           <div class="d-flex flex-column">
             <button class="add-card-btn mb-2">Add to card</button>
@@ -155,6 +143,7 @@
       </div>
     </div>
   </section>
+
 
 
 
